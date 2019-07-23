@@ -1,0 +1,29 @@
+{
+  "name": "node_js_api",
+  "version": "1.0.0",
+  "description": "node_js_rest_api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganeshjangid/node_js_rest_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ganeshjangid/node_js_rest_api/issues"
+  },
+  "homepage": "https://github.com/ganeshjangid/node_js_rest_api#readme",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "morgan": "1.9.1",
+    "parse-error": "0.2.0",
+    "passport": "0.4.0"
+  }
+}
