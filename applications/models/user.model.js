@@ -1,4 +1,4 @@
-'use strict';
+
 const bcrypt 			= require('bcrypt');
 const bcrypt_p 			= require('bcrypt-promise');
 const jwt           	= require('jsonwebtoken');
@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     var Model = sequelize.define('User', {
         first     : DataTypes.STRING,
         last      : DataTypes.STRING,
-        email     : {type: DataTypes.STRING, allowNull: true, unique: true, validate: { isEmail: {msg: "Phone number invalid."} }},
+        email     : {type: DataTypes.STRING, allowNull: true, unique: true, validate: { isEmail: {msg: "email id invalid."} }},
         phone     : {type: DataTypes.STRING, allowNull: true, unique: true, validate: { len: {args: [7, 20], msg: "Phone number invalid, too short."}, isNumeric: { msg: "not a valid phone number."} }},
         password  : DataTypes.STRING,
     });
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Model.prototype.comparePassword = async function (pw) {
-        let err, pass
+        let err, pass;
         if(!this.password) TE('password not set');
 
         [err, pass] = await to(bcrypt_p.compare(pw, this.password));
